@@ -1,0 +1,6 @@
+ mn.module().public()
+
+ The ModuleConstructor.public() function is used to add a
+ new public variable to the ModuleConstructor instance.
+ Public variables will also be returned as the module's result.
+ This function returns the ModuleConstructor instance (for chaining).

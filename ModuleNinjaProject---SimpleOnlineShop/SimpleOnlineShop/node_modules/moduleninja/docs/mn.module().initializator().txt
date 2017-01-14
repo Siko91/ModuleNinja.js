@@ -1,0 +1,6 @@
+ mn.module().initializator()
+
+ The ModuleConstructor.private() function is used to add a
+ new public variable to the ModuleConstructor instance.
+ Private variables will NOT be returned as the module's result.
+ This function returns the ModuleConstructor instance (for chaining).

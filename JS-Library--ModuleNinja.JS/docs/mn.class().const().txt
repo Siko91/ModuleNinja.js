@@ -1,0 +1,4 @@
+ mn.class().const()
+
+ The ClassConstructor.const() function is used to add a private value to the class.
+ It redirects to the ClassConstructor.private() function.

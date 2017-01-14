@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Module Ninja</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="basicStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper" class="container">
+        <header class="row">
+            <div class="col-md-3">
+                <a href="#/home" id="site-logo">
+                    <img src="images/ModuleNinja.jpg" alt="Module Ninja Logo" />
+                </a>
+            </div>
+            <section class="col-md-3 col-xs-4">
+                <a class="col-xs-12" href="#/home"><span>Home</span></a>
+                <a class="col-xs-12" href="#/download"><span>Download</span></a>
+            </section>
+
+            <section class="col-md-3 col-xs-4">
+                <a class="col-xs-12" href="#/faq"><span>FAQ</span></a>
+                <a class="col-xs-12" href="#/contact"><span>Contact me</span></a>
+                <a class="col-xs-12" href="#/documentation"><span>Documentation</span></a>
+            </section>
+
+            <section class="col-md-3 col-xs-4">
+                <a class="col-xs-12" href="https://www.npmjs.org/package/moduleninja"><span>NPM</span></a>
+                <a class="col-xs-12" href="https://github.com/Siko91/JS-Library--ModuleNinja.JS"><span>GitHub</span></a>
+                <a class="col-xs-12" href="https://github.com/Siko91/JS-Library--ModuleNinja.JS/issues"><span>Report bug</span></a>
+            </section>
+        </header>
+        <section id="main-section" class="row">
+            <div class="col-xs-3" id="content-items"></div>
+            <article id="content-item-article" class="col-xs-9">
+            </article>
+        </section>
+        <footer>
+            <script src="libs/jquery.min.js"></script>
+            <script src="libs/sammy.js"></script>
+            <script src="libs/require.js" data-main="main"></script>
+            <script src="bootstrap.min.js"></script>
+
+            <div id="current-doc-container"></div>
+        </footer>
+    </div>
+</body>
+</html>

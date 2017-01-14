@@ -1,0 +1,5 @@
+ Accept Class
+
+ The moduleNinja Accept class is used to indicate that a given string
+ should be treated as a javaScript code.
+ It is not sequre to use it, so only advanced developers should concider it as an option.

@@ -1,0 +1,24 @@
+ mn.class().private()
+
+ The ClassConstructor.private() function is used to add a private value to the class.
+ The private value is like the 'private static' values in other languages.
+ It is shared between all the instances of the class, and can not be accessed from outside.
+
+ The function accepts (privateName, privateValue)
+      privateName is the name of the private variable
+      privateValue is the value of that variable. Any value is valid.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Circle with prop 'radius' and private 'pi'.
+      // it also has a function that returns the area, using the private 'pi'.
+      var Circle = mn.class()
+            .className('Circle')
+            .prop('radius', 'positiveNumber')
+            .private('pi', Math.PI)
+            .accessor('getArea', function () {
+                var area = pi * this.radius() * this.radius();
+                return area;
+            })
+            .finalize();

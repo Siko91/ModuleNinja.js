@@ -1,0 +1,53 @@
+ mn.class().arg()
+
+ The ClassConstructor.arg() function is used to add
+ both a property and an accept to the class.
+
+ The function accepts (argName, argValidation, defaultValue)
+      argName will be both the name of the property and the accept.
+      argValidation will be the property's validation type.
+      defaultValue will be the accept's default value
+          (while the prop's default value will be 'new Accept(argName)')
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Rectangle with arguments 'sizeA' and 'sizeB'
+      //       both of type 'any'
+      var Rectangle = mn.class('sizeA', 'sizeB')
+          .className('Rectangle')
+          .finalize();
+
+      // creates a class Rectangle with arguments 'sizeA' and 'sizeB'
+      //       both of type 'positiveNumber'
+      var Rectangle = mn.class({
+          'sizeA': 'positiveNumber',
+          'sizeB': 'positiveNumber'
+          })
+          .className('Rectangle')
+          .finalize();
+
+      // creates a class Rectangle with arguments 'sizeA' and 'sizeB'
+      //       both of type 'any'
+      var Rectangle = mn.class()
+          .arg('sizeA')
+          .arg('sizeB')
+          .className('Rectangle')
+          .finalize();
+
+      // creates a class Rectangle with arguments 'sizeA' and 'sizeB'
+      //       both of type 'positiveNumber'
+      var Rectangle = mn.class()
+          .arg('sizeA', 'positiveNumber')
+          .arg('sizeB', 'positiveNumber')
+          .className('Rectangle')
+          .finalize();
+
+      // creates a class Rectangle with arguments 'sizeA' and 'sizeB'
+      //       both of type 'any'.
+      // If their accepts are not defined, the accept's value will be set to 1.
+      var Rectangle = mn.class()
+          .arg('sizeA', 'any', 1)
+          .arg('sizeB', 'any', 1)
+          .className('Rectangle')
+          .finalize();

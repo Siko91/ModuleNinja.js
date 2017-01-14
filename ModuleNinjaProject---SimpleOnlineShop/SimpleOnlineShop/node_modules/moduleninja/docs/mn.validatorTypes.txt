@@ -1,0 +1,23 @@
+ mn.validatorTypes
+
+ moduleNinja has a set of predefined type validators. Althrough there aren't such types,
+ the validators create an abstraction about their existance.
+
+ The types are:
+      'any' - any value is good, exept undefined. No exceptions raised.
+      'string' - accepts only string values. Any other value will raice an exception.
+      'char' - accepts only string values with an exact length of 1. Any other value
+                  will raice an exception.
+      'nonEmptyString' - accepts only string values with length bigger than 0.
+                  Any other value will raice an exception.
+      'bool' - accepts only boolean values. Any other value will raice an exception.
+      'number' - accepts only numeric values. Any other value will raice an exception.
+      'int' - accepts only numeric values and converts them to a simple number (using Math.floor()).
+                  Any other value will raice an exception.
+      'positiveNumber' - accepts only positive numeric values (0 or greater).
+                  Any other value will raice an exception.
+      'positiveInt' - accepts only positive numeric values (0 or greater) and converts them to a
+                  simple number (using Math.floor()). Any other value will raice an exception.
+      'array' - accepts only arrays. Any other value will raice an exception.
+      'object' - accepts only objects. Any other value will raice an exception.
+      'type' - accepts only objects of the specifyed type. Any other value will raice an exception.

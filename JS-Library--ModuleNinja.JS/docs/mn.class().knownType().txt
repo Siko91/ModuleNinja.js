@@ -1,0 +1,34 @@
+ mn.class().knownType()
+
+ The ClassConstructor.knownType() function is used to add an Type (aka Class) definition to the class.
+ The knownTypes are functions that the class uses for validation, or for other purposes
+ The function accepts a single instance of the moduleNinja Type class.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates an empty class Figure.
+      // creates a class FigureDuo with props 'figure1' and 'figure2' - both of type Figure.
+      var Figure = mn.class().className('Figure')
+          .finalize();
+      var FigureDuo = mn.class().className('FigureDuo')
+          .knownType(mn.type('Figure', Figure))
+          .prop('figure1', 'type Figure')
+          .prop('figure2', 'type Figure')
+          .finalize();
+
+      // creates an empty class Figure.
+      // creates a class FigureDuo with props 'figure1' and 'figure2' - both of type Figure
+      // and an initializator function that sets both of the props to a new instance of the Figure class.
+      // notice that the 'types' object is referenced. It is a private object that stores all the known types.
+      var Figure = mn.class().className('Figure')
+          .finalize();
+      var FigureDuo = mn.class().className('FigureDuo')
+          .knownType(mn.type('Figure', Figure))
+          .prop('figure1', 'type Figure')
+          .prop('figure2', 'type Figure')
+          .init('setFigures', function () {
+              // the chaining makes it possible to write code like that
+              return this.figure1(new types.Figure()).figure2(new types.Figure());
+          })
+          .finalize();

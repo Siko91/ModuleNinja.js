@@ -1,0 +1,10 @@
+ mn.class().className()
+
+ The ClassConstructor.className() function is used to set the name of the class.
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Example
+      // sets the name of a new class to 'Figure' and finalizes it.
+      var Figure = mn.class()
+          .className('Figure')
+          .finalize();

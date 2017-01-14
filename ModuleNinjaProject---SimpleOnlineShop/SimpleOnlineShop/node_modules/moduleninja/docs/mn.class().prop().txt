@@ -1,0 +1,87 @@
+ mn.class().prop()
+
+ The ClassConstructor.prop() function is used to add an property to the class.
+
+ The function accepts (propName, propValidation, propInitialValue)
+      propName will be the name of the property.
+      propValidation will be the type of validation that the property will use.
+              If not defined, the property will use type 'any'.
+      defaultValue will be the property's default value.
+              If not defined, the property will have no default value.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' - both of type 'any'
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA')
+          .prop('sizeB')
+          .finalize();
+
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' of type 'positiveNumber'
+      //       both with default value of 1.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA', 'positiveNumber', 1)
+          .prop('sizeB', 'positiveNumber', 1)
+          .finalize();
+
+      // creates an empty class Figure
+      // creates a class FigureDuo with props 'figure1' and 'figure2' of type 'Figure'.
+      // (once a type is used, it's added to the known types of the class. From there on,
+      //       it's possible to reference it in a string, as shown.)
+      var Figure = mn.class()
+          .className('Figure')
+          .finalize();
+      var FigureDuo = mn.class()
+          .className('FigureDuo')
+          .prop('figure1', mn.type('Figure', Figure))
+          .prop('figure2', 'type Figure')
+          .finalize();
+
+      // creates a class Circle with an arg 'area' of type 'positiveNumber', that is required
+      // creates a class FigureSolo with prop 'figure' of type 'Figure'.
+      // The prop will have a default value of a moduleNinja literal
+      //       (which is the same as moduleNinja's Accept class).
+      var Figure = mn.class()
+          .className('Figure')
+          .arg('area', 'positiveNumber')
+          .finalize();
+      var FigureSolo = mn.class()
+          .className('FigureSolo')
+          .prop('figure', mn.type('Figure', Figure), mn.literal('new types.Figure(10)'))
+          .finalize();
+
+      // creates a new class Square with a prop 'size' that has a custom validator function,
+      // that accepts only numbers and rounds them to a base of 10
+      // notice that in the validator function the property that is being referenced (_size)
+      //       has an underscore at the begining. This is important.
+      // the function is named 'size', but the property itself is named '_size'.
+      var Square = mn.class()
+          .className('Square')
+          .prop('size', function(value){
+              if (value === undefined) {
+                  // property setter
+                  if (typeof value === 'number') {
+                      var leftTo10 = value % 10;
+                      if (leftTo10 >= 5) {
+                          value += (10-leftTo10);
+                      }
+                      else {
+                          value -= leftTo10;
+                      }
+
+                      this._size = value; // set's the property
+                      return this; // return self for chaining
+                  }
+                  else {
+                      throw new TypeError('size value must be a number')
+                  }
+              }
+              else {
+                  // property getter
+                  return this._size;
+              }
+          })
+

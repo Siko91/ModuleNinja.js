@@ -1,0 +1,37 @@
+ mn.class().accepts()
+
+ The ClassConstructor.accepts() function is used to add an accept to the class.
+
+ The function accepts (acceptName, defaultValue)
+      acceptName will be the name of the accept.
+      defaultValue will be the accept's default value. If not defined,
+          the class will treat the accept as a required and will throw errors if it is not defined.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Rectangle with accepts 'sizeA' and 'sizeB' - both required
+      // in this form the accepts are useless, but combined with an Accept object as
+      // a property's default value, they can be pretty neat.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .accept('sizeA')
+          .accept('sizeB')
+          .finalize();
+
+      // creates a class Rectangle with accepts 'sizeA' and 'sizeB'
+      //       both with default value of 1.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .accept('sizeA', 1)
+          .accept('sizeB', 1)
+          .finalize();
+
+      // creates a class Circle with a single accept 'diameter' which
+      // is used by the 'radius' property via an Accept class.
+      // the Accept class's value will be treated as a JavaScript code.
+      var Circle = mn.class()
+          .className('Circle')
+          .accept('diameter')
+          .prop('radius', 'positiveNumber', mn.accept('diameter/2'))
+          .finalize();

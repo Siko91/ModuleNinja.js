@@ -1,0 +1,61 @@
+ moduleNinja
+
+ `moduleNinja` (also aliased as 'mn') is a JavaScript framework that makes the
+ creation of dynamic classes in JavaScript possible and easy. A 'dynamic class'
+ is a dynamicli generated and runned JS code that returns a function witch can
+ be used as a class (simularly to other languages). This means that the 'class'
+ will be put together in the runtime of the application, and not on it initialization.
+
+ Another moduleNinja feature of moduleNinja is getting the code of the created
+ module (the class) as a string. It can be used as a development tool (since
+ moduleNinja provides code with good quality).
+
+ moduleNinja can also create more complex modules, witch can contain multiple classes.
+ Althrough they are more complex, their creation is actually a lot simpler, since there
+ aren't a lot of options about creating them.
+
+ Last but not least - moduleNinja has a side feature that allows the user to easily
+ clone any kind of bojects. The clones are deep, and include references to the
+ functions of the original object. There's also a less sequre version of the cloner,
+ which will try to create a new instance of the constructor of the given object,
+ but it's use is not reccomended.
+
+ ### Examples
+
+      // returns a new dynamic class (which is empty).
+      // The finalized version can no longer be changed by moduleNinja.
+      var newClass = mn.class()
+          .finalize();
+
+      // returns a new dynamic class (with a single property, named 'prop').
+      // The finalized version can no longer be changed by moduleNinja.
+      var newClass = mn.class()
+          .prop('prop')
+          .finalize();
+
+      // returns the code of the exampleAbove.
+      var jsCode = mn.class()
+          .prop('prop')
+          .toString();
+
+      // returns a new complex module (which is empty)
+      // The finalized version can no longer be changed by moduleNinja.
+      var module = mn.module()
+          .finalize();
+
+      // returns a new complex module ( with a single public property named 'prop'
+      // having an empty moduleNinja class as it's value )
+      // The finalized version can no longer be changed by moduleNinja.
+      var module = mn.module()
+          .public('prop', mn.class().finalize())
+          .finalize();
+
+      // returns a cloned object by the default moduleNinja cloner
+      var oldObject = { prop: 'value' }
+      var newObject = mn.clone(oldObject);
+
+      // returns a cloned object by the complete moduleNinja cloner
+      // this cloner is not as sequre.
+      var oldObject = new Date()
+      var newObject = mn.clone(oldObject, true);
+      var success = newObject instanceof Date; // true

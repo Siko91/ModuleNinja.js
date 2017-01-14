@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>ModuleNinjaJS Tests</title>
+    <link href="node_modules/mocha/mocha.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="mocha"></div>
+
+    <script type="text/javascript" src="../moduleNinja.js"></script>
+
+    <script type="text/javascript" src="node_modules/chai/chai.js"></script>
+    <script type="text/javascript" src="node_modules/mocha/mocha.js"></script>
+
+    <script type="text/javascript">
+        mocha.setup('bdd');
+        expect = chai.expect;
+    </script>
+
+    <!-- TEST FILES HERE -->
+    <script type="text/javascript" src="ClassParamTests.js"></script>
+
+    <script type="text/javascript">
+        mocha.run();
+    </script>
+</body>
+</html>

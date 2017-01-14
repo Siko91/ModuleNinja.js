@@ -1,0 +1,4 @@
+ mn.class().toString()
+
+ Converts the ClassConstructor to string (javascript code)
+ redirects to ClassConstructor.extractCode();

@@ -1,0 +1,3 @@
+ mn.module().extractCode()
+
+ Converts the ModuleConstructor to string (javascript code) and returns it.

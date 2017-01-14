@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Class Example</title>
+		<style>
+			div {
+				min-height: 20px;
+				padding: 5px;
+    			margin: 5px;
+				border: 1px solid black;
+				border-radius: 10px;
+				background-color: #ACF;
+			}
+			div:hover{
+				background-color: #ffC;
+			}
+			div.inline{
+				display: inline-block;
+				padding: 0px;
+				padding-left: 10px;
+				padding-right: 10px;
+				min-width: 30px;
+				min-height: 0px;
+				text-align: center;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="class-body">
+				(function () &#123;
+
+				<div class="class-known-types">known types</div>
+				<div class="class-valinators">valclassators</div>
+				<div class="class-privates">constants and privates</div>
+				<div class="class-initializators">initializators</div>
+				<div>
+					function <div class="inline class-name">className</div> ( <div class="inline class-accepts">Accept1, Accept2, ... AcceptN</div> ) &#123;
+					<div class="class-accept-chlecks">CheckTheAccepts</div>
+					<div class="class-prop-creation">Create the propertyes</div>
+					<div class="class-init-calls">Call initializators</div>
+				</div>
+				<div class="class-inharitance"><div class="inline class-name">className</div>.prototype = new Parent()</div>
+				<div class="class-functions">Add accessor functions to prototype</div>
+
+				&#125; ())
+			</div>
+			<div class="outher-statements">
+				<div class="class-extensions">Add extension functions to prototype</div>
+				return <div class="inline class-name">className</div> ;
+			</div>
+		</div>
+	</body>
+</html>

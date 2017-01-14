@@ -1,0 +1,17 @@
+ mn.class().useStrict()
+
+ The ClassConstructor.useStrict() function is used
+ to set the useStrict setting of the class.
+
+ It only accepts boolean values.
+ It's default value is 'true'.
+
+ If it's value is true during a finalization, an <'use strict';> command will be added to the class's code.
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Example
+      // sets the useStrict setting of a new class 'Figure' to 'false' and finalizes it.
+      var Figure = mn.class()
+          .className('Figure')
+          .useStrict(false)
+          .finalize();

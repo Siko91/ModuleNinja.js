@@ -1,0 +1,37 @@
+ mn.class().extension()
+
+ The ClassConstructor.extension() function is used to add an extension functions to the class.
+ The extension functions are functions added to the class's prototype that can NOT access the class privates.
+
+ The function accepts (functionName, functionBody)
+      functionName will be the name of the accessor function.
+      functionBody will be the function itself
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' - both of type 'positiveNumber',
+      // and a function called 'resetSizes' that sets sizeA and sizeB to 1.
+      // the function will return the object itself, for chaining.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA', 'positiveNumber')
+          .prop('sizeB', 'positiveNumber')
+          .extension('resetSizes', function () {
+              this.sizeA(1);
+              this.sizeB(1);
+              return this;
+          })
+          .finalize();
+
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' - both of type 'positiveNumber',
+      // and a function called 'getArea' that returns the rect's area.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA', 'positiveNumber')
+          .prop('sizeB', 'positiveNumber')
+          .extension('resetSizes', function () {
+              var area = this.sizeA() * this.sizeB();
+              return area;
+          })
+          .finalize();

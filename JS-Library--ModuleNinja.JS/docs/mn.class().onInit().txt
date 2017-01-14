@@ -1,0 +1,4 @@
+ mn.class().onInit()
+
+ The ClassConstructor.onInit() function is used to add an initializator functions to the class.
+ It redirects to the ClassConstructor.initializator() function.

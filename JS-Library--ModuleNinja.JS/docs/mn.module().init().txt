@@ -1,0 +1,4 @@
+ mn.module().init()
+
+ The ModuleConstructor.init() function is used to add an initializator functions to the class.
+ It redirects to the ModuleConstructor.initializator() function.

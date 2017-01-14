@@ -1,0 +1,15 @@
+﻿#playerArea, #dealerArea {
+    border: 1px solid black;
+    width: 60%;
+}
+
+    #playerArea .card, #dealerArea .card {
+        border: 1px solid black;
+        display: inline-block;
+        width: 80px;
+        height: 50px;
+    }
+
+    #playerArea .secret-card, #dealerArea .secret-card {
+        background: yellow;
+    }

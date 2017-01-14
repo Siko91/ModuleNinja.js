@@ -1,0 +1,5 @@
+ Type Class
+
+ The moduleNinja Type class is used to indicate that a given function
+ should be treated as a Type (aka Class).
+ It allows the use of more advanced validators - the Type validators.

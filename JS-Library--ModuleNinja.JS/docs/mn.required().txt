@@ -1,0 +1,3 @@
+ mn.required()
+
+ returns a new instance of the moduleNinja Required class.

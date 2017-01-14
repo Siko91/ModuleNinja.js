@@ -1,0 +1,43 @@
+ mn.class().validator()
+
+ The ClassConstructor.validator() function is used to add a custom reusable validator to the class.
+ The new validatr will act as a type, in the same way that the basic validators do
+ (same as : 'any', 'string', 'char', 'int' etc...)
+
+ The function accepts (validatorName, validatorBody)
+      validatorName is the name of the validator
+      validatorBody is the validation function. It must accept 2 values - target and value.
+              target is the name of the property that that uses the validator.
+              value is the value that the validator should set to the targeted property.
+                      If value is undefined, the validator should return the value of the targeted property.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Line with prop 'lineLength' (positiveNumber, default=0)
+      // creates a class Lines with prop 'lines' with validation 'linesArray'
+      var Line = mn.class().className('Line')
+          .arg('lineLength', 'positiveNumber', 0)
+          .finalize();
+      var Lines = mn.class().className('Lines')
+          .knownType(mn.type('Line', Line))
+          .validator('linesArray', function (target, value) {
+              if (value !== undefined) {
+                  if (value instanceof Array) {
+                      for (var i = 0; i < value.length; i++) {
+                          if (!(value[i] instanceof types.Line)) {
+                              throw new TypeError('array contains value that is not a Line');
+                          }
+                      }
+                      this[target] = value;
+                  }
+                  else {
+                      throw new TypeError('value is not an array');
+                  }
+              }
+              else {
+                  return this[target];
+              }
+          })
+          .prop('lines', 'linesArray')
+          .finalize();

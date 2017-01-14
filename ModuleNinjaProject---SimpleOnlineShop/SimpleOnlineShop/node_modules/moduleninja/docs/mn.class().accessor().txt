@@ -1,0 +1,50 @@
+ mn.class().accessor()
+
+ The ClassConstructor.accessor() function is used to add an accessor functions to the class.
+ The accessor functions are functions added to the class's prototype that can also access the class privates.
+
+ The function accepts (accessorName, accessorFunction)
+      accessorName will be the name of the accessor function.
+      accessorFunction will be the function itself
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' - both of type 'positiveNumber',
+      // and a function called 'resetSizes' that sets sizeA and sizeB to 1.
+      // the function will return the object itself, for chaining.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA', 'positiveNumber')
+          .prop('sizeB', 'positiveNumber')
+          .accessor('resetSizes', function () {
+              this.sizeA(1);
+              this.sizeB(1);
+              return this;
+          })
+          .finalize();
+
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' - both of type 'positiveNumber',
+      // and a function called 'getArea' that returns the rect's area.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA', 'positiveNumber')
+          .prop('getArea', 'positiveNumber')
+          .accessor('resetSizes', function () {
+              var area = this.sizeA() * this.sizeB();
+              return area;
+          })
+          .finalize();
+
+      // creates a class Circle with prop 'radius', a privateValue 'pi',
+      // and a function called 'getArea' that returns the rect's area.
+      // notice that the accessor function can access private values.
+      var Circle = mn.class()
+            .className('Circle')
+            .prop('radius', 'positiveNumber')
+            .private('pi', Math.PI)
+            .accessor('getArea', function () {
+                var area = pi * this.radius() * this.radius();
+                return area;
+            })
+            .finalize();

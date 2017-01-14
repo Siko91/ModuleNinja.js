@@ -1,0 +1,4 @@
+ mn.class().function()
+
+ The ClassConstructor.function() function is used to add an accessor functions to the class.
+ It redirects to the ClassConstructor.accessor() function.

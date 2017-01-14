@@ -1,0 +1,23 @@
+ mn.class().initializator()
+
+ The ClassConstructor.initializator() function is used to add an initializator functions to the class.
+ The initializator functions are called only on a new object initialization
+
+ The function accepts (initFuncName, initFuncBody)
+      initFuncName will be the name of the init function.
+      initFuncBody will be the function that that should be called on initialization.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ ### Examples
+      // creates a class Rectangle with props 'sizeA' and 'sizeB' - both of type 'any',
+      // and an initializator that sets sizeA to 10, and sizeB to 15.
+      var Rectangle = mn.class()
+          .className('Rectangle')
+          .prop('sizeA')
+          .prop('sizeB')
+          .initializator('setSizes', function () {
+              this.sizeA(10);
+              this.sizeB(15);
+          })
+          .finalize();

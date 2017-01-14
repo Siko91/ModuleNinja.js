@@ -1,0 +1,15 @@
+{
+  "name": "MNTests",
+  "version": "0.0.1",
+  "description": "ModuleNinjaJS tests",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Alexander Dinkov",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
+  }
+}

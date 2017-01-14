@@ -1,0 +1,56 @@
+{
+  "name": "moduleninja",
+  "version": "0.0.4",
+  "maintainers": [
+    {
+      "name": "alexanderdinkov",
+      "email": "modulegenie@gmail.com"
+    }
+  ],
+  "description": "A java script library, presenting another way of writing JS code. It gives you dynamic classes, dynamic modules and object cloner.",
+  "keywords": [
+    "framework",
+    "dynamic",
+    "module",
+    "class",
+    "js",
+    "ninja"
+  ],
+  "author": {
+    "name": "Alexander Dinkov"
+  },
+  "homepage": "http://moduleninja.free.bg/#/home",
+  "licenses": [
+    {
+      "type": "ISC"
+    }
+  ],
+  "main": "ModuleNinjaJS.js",
+  "directories": {
+    "test": "tests",
+    "docs": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Siko91/JS-Library--ModuleNinja.JS"
+  },
+  "bugs": {
+    "url": "https://github.com/Siko91/JS-Library--ModuleNinja.JS/issues"
+  },
+  "gitHead": "4471c575d33fff68c34500d729a7abb53891a707",
+  "_id": "moduleninja@0.0.4",
+  "scripts": {},
+  "_shasum": "5eb1d382fcca730fafd8f54b295cc29e36cfc36e",
+  "_from": "moduleninja@*",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "alexanderdinkov",
+    "email": "lokikko@mail.bg"
+  },
+  "dist": {
+    "shasum": "38e3fdcca27d649fd022b97d28099ff6c11ad77c",
+    "tarball": "http://registry.npmjs.org/moduleninja/-/moduleninja-0.0.3.tgz"
+  },
+  "_resolved": "file:node_modules\\moduleninja",
+  "readme": "ERROR: No README data found!"
+}

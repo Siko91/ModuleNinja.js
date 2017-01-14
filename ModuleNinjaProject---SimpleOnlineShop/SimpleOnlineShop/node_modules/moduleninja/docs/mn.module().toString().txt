@@ -1,0 +1,4 @@
+ mn.module().toString()
+
+ Converts the ModuleConstructor to string (javascript code)
+ redirects to ModuleConstructor.extractCode();

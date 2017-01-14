@@ -1,0 +1,25 @@
+ mn.class().childOf()
+
+ The ClassConstructor.childOf() function is used to set the parent class
+ of the mn.class() that is being constructed.
+
+ It only accepts a single function value - the parent class.
+ The created class's prototype will be set to a new instance of the parent class.
+
+ This function returns the ClassConstructor instance (for chaining).
+
+ Warning! Not sequre! If the parent requires arguments on initializations,
+ and throws errors if they are undefined, then it will throw errors here too.
+
+ TODO: Make this more flexable;
+
+ ### Example
+      // creates a class Figure.
+      // creates a class Square and sets it's parent to Figure
+      var Figure = mn.class()
+          .className('Figure')
+          .finalize();
+      var Square = mn.class()
+          .className('Square')
+          .childOf(Figure)
+          .finalize();

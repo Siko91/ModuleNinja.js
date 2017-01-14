@@ -1,0 +1,4 @@
+ mn.module().finalize()
+
+ Evaluates the stringifyed ModuleConstructor instance
+ and returns the result (the public variables).

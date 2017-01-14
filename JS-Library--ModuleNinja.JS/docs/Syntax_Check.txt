@@ -1,0 +1,12 @@
+ Syntax Check
+
+ This function contains all the syntax rules about the variable and function names
+ that can be used in the modules or in the classes.
+ It throws an exception if the given name doesn't match the rules, or returns void if it does.
+
+ The rules are simple:
+       - the name must be of string type
+       - name's lenght must be bigger than 0
+       - name must start with a latin letter
+       - name can only contain latin letters and numbers
+

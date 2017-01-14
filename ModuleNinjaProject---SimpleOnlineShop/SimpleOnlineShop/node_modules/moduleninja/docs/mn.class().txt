@@ -1,0 +1,3 @@
+ mn.class()
+
+ returns a new instance of the moduleNinja's ClassConstructor class

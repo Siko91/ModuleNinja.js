@@ -1,0 +1,3 @@
+ mn.clone()
+
+ returns a deep clone of the given object. Functions are cloned too.

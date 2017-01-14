@@ -1,0 +1,3 @@
+ ModuleConstructor Class
+
+ The ModuleConstructor class. It is used in the creation of complex modules.

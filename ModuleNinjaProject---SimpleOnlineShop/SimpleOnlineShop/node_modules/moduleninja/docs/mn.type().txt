@@ -1,0 +1,3 @@
+ mn.type()
+
+ returns a new instance of the moduleNinja Type class.

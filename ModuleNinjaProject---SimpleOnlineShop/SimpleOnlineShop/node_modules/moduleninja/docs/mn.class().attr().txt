@@ -1,0 +1,5 @@
+ mn.class().attr()
+
+ The ClassConstructor.attr() function is used to add
+ both a property and an accept to the class.
+ It redirects to the ClassConstructor.arg() function.

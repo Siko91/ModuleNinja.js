@@ -1,0 +1,4 @@
+ mn.class().finalize()
+
+ Converts the ClassConstructor to string (javascript code) and evaluates it.
+ returns the result of the evaluation.

@@ -1,0 +1,4 @@
+ mn.class().accept()
+
+ The ClassConstructor.accept() function is used to add an accept to the class.
+ It redirects to the ClassConstructor.accepts() function.

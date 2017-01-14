@@ -1,0 +1,3 @@
+ ClassConstructor Class
+
+ The ClassConstructor class. It is used in the creation of class modules.

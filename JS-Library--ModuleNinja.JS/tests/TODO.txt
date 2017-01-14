@@ -1,0 +1,24 @@
+[Class]
+-arg
+-name
+-prop
+-func
+-extension
+-accept
+-const/private
+-childOf
+-knownType
+-initFunc
+
+-validator
+
+[Module]
+
+-public
+-private
+
+[Type]
+[Accept] / [Literal]
+[Required]
+
+[Clone]
